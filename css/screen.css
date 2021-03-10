@@ -28,13 +28,13 @@ html {
   /* font-family: "Inter Web","Helvetica Neue", Helvetica, arial, sans-serif; */
   font-family: 'droid-serif', Georgia, serif;
   color: #5c6366;
-  padding: 48px 24px 24px;
+  /* padding: 48px 24px 24px; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  max-width: 42em;
+  /* max-width: 42em; */
   margin: 0 auto;
 }
 
@@ -74,7 +74,7 @@ h1 {
   /* font-weight: normal; */
   line-height: 40px;
   margin: 0 0 24px;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 
 h2 {
@@ -83,8 +83,8 @@ h2 {
   margin: 0 0 24px;
 }
 
-*+h2{
-    margin-top: 48px;
+* + h2 {
+  margin-top: 48px;
 }
 
 h3 {
@@ -178,18 +178,38 @@ a:focus {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-  html {
+  .c-article__header {
     padding: 48px 48px 24px;
   }
   h1 {
     font-size: 58px;
     line-height: 64px;
   }
+  .c-article__author {
+    padding-bottom: 24px;
+  }
+  .c-article__body {
+    padding: 24px 48px;
+  }
 }
 
 /* Large devices (landscape tablets, desktops, 992px and up) */
 
 @media (min-width: 992px) {
+  .c-article__body {
+    display: flex;
+    gap: 24px;
+  }
+  .c-article__author {
+    width: 25%;
+  }
+  .c-article__content {
+    width: 75%;
+  }
+  .c-author{
+      flex-direction: column;
+      align-items: start;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -271,25 +291,55 @@ a:focus {
 */
 
 .c-author {
-    display: flex;
-    align-items: center;
-    margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-.c-author__image{
-    width: 56px;
-    height: 56px;
-    border-radius: 100%;
+.c-author__image {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
 }
 
 .c-author__name,
-.c-author__meta{
-    font-size: 14px;
-    font-family: "Inter", "Helvetica Neue", Helvetica, arial, sans-serif;
-    line-height: 24px;
+.c-author__meta {
+  font-size: 14px;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  line-height: 24px;
 }
 
-.c-author__name{
-    font-size: 16px;
-    line-height: 24px;
+.c-author__name {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/*
+
+    Components: Article
+
+*/
+
+.c-article__header,
+.c-article__body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.c-article__header {
+  padding: 24px 24px 0;
+}
+
+.c-article__body {
+  padding: 0 24px;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+    min-width: 36em;
 }
